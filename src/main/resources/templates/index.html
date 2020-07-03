@@ -1,0 +1,39 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>图片识别-大宇</title>
+    <link href="/css/layui.css" rel="stylesheet" />
+    <script src="/layui.js"></script>
+    <script  src="http://code.jquery.com/jquery-latest.js"> </script>
+</head>
+<body style="position:relative">
+<div style=" position: absolute;
+        top: 50%;
+        transform: translateY(-50%);margin-left: 47%">
+    <button id="uploadImage" class="layui-btn layui-btn-radius">
+    <i class="layui-icon">&#xe67c;</i>选择图片</button>
+</div>
+</body>
+<script>
+    layui.use('upload', function(){
+        var upload = layui.upload;
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#uploadImage' //绑定元素
+            ,url: '/upload' //上传接口
+            ,done: function(res){
+                layer.alert(res.data, {
+                    skin: 'layui-layer-lan'
+                    ,closeBtn: 0
+                    ,anim: 6 //动画类型
+                });
+            }
+            ,error: function(){
+                //请求异常回调
+            }
+        });
+    });
+</script>
+</html>
+
+
