@@ -46,7 +46,7 @@ public class AiImage {
         String[] wordses = result.split("words");
         String info="";
         for(int i=1;i<wordses.length;i++){
-            if(i==wordses.length-1){ //说明是最后一个数据
+            if(i==wordses.length-1){ //说明是最后一个data1dp
                 info=info+wordses[i].substring(3,wordses[i].length());
             }else {
                 info = info + wordses[i].substring(3, wordses[i].length() - 5);
