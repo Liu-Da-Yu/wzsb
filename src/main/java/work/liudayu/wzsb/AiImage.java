@@ -20,9 +20,9 @@ public class AiImage {
     @RequestMapping(value = "/upload")
     String upload(MultipartFile file,HttpServletRequest request){
 
-        final String APP_ID = "11007270";
-        final String API_KEY = "DrsthdAGsEyrGdiEUVXjhD8o";
-        final String SECRET_KEY = "PNNTNzj4KUcbA3RNNqFutKKOUjY1Nqoa";
+        final String APP_ID = "1007270";
+        final String API_KEY = "rsthdAGsEyrGdiEUVXjhD8o";
+        final String SECRET_KEY = "NNTNzj4KUcbA3RNNqFutKKOUjY1Nqoa";
         AipOcr client = new AipOcr(APP_ID, API_KEY, SECRET_KEY);
         // 参数为本地图片二进制数组
         byte[] data =null;
@@ -46,7 +46,7 @@ public class AiImage {
         String[] wordses = result.split("words");
         String info="";
         for(int i=1;i<wordses.length;i++){
-            if(i==wordses.length-1){ //说明是最后一个数据
+            if(i==wordses.length-1){ //说明是最后一个data1dp
                 info=info+wordses[i].substring(3,wordses[i].length());
             }else {
                 info = info + wordses[i].substring(3, wordses[i].length() - 5);
